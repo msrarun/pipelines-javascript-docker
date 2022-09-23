@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: msrarunpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: msrarunpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: msrarunpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: msrarunpipelinesjavascriptdocker 
+          image: sanach.azurecr.io/msrarunpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
